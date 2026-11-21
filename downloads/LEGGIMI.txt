@@ -1,0 +1,25 @@
+ELIS MUSIC — KIT DEL LOGO
+Elis Music canta, e la musica risponde.
+
+CONTENUTO
+- logos-png/   PNG con sfondo trasparente, 1350 px di larghezza (uso digitale e stampa di piccolo formato)
+- logos-svg/   Versioni vettoriali (SVG) per ogni dimensione: stampa, ricami, insegne, veicoli
+- fonts/       Yeseva One (titoli) e Poppins (testi e interfaccia), in formato WOFF2, con licenza OFL
+- cores/       Palette in TXT, CSS e JSON
+
+VARIANTI
+- Orizzontale: uso principale, in formati larghi
+- Verticale: spazi alti, braccialetti, packaging, display
+- Monogramma: avatar, timbri, social (quando il nome completo non entra)
+
+USO
+- Usa la versione positiva su fondo chiaro (bianco caldo) e la negativa su grafite o su foto scura.
+- Lascia intorno al logo un'area libera pari all'altezza della "e" di "elis".
+- Non deformare, non ruotare, non cambiare i colori, non applicare effetti (ombre, contorni, bagliori).
+- Non sovrapporre il logo alle foto senza il velo di gradiente: le foto mockup mostrano già il logo applicato.
+
+FONT
+- Yeseva One: titoli. Licenza SIL Open Font License 1.1 (vedi LICENSE-YesevaOne.txt).
+- Poppins: testi e interfaccia. Licenza SIL Open Font License 1.1 (vedi LICENSE-Poppins.txt).
+
+Dubbi e nuove applicazioni: Studio Search — contato@studiosearch.com.br

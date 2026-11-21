@@ -1,0 +1,5 @@
+Elis Music — Palette
+
+Grafite      #2A2A28   RGB 42 42 40     (colore principale di sfondo e testo)
+Bianco caldo #F6F6F6   RGB 246 246 246  (sfondi chiari e testo su grafite)
+Oro          #CC9E2F   RGB 204 158 47  (accenti, nota musicale, pulsanti)

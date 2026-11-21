@@ -1,0 +1,8 @@
+{
+  "marca": "Elis Music",
+  "cores": [
+    {"nome": "Grafite", "hex": "#2A2A28", "rgb": [42, 42, 40]},
+    {"nome": "Bianco caldo", "hex": "#F6F6F6", "rgb": [246, 246, 246]},
+    {"nome": "Oro", "hex": "#CC9E2F", "rgb": [204, 158, 47]}
+  ]
+}

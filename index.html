@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elis Music — Manuale d'identità</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--grafite:#2A2A28;--caldo:#F6F6F6;--oro:#CC9E2F;--serif:'Yeseva One',Georgia,serif;--sans:Poppins,system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--grafite);color:var(--caldo);font-family:var(--sans);overflow-x:hidden;padding-bottom:70px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.05}
+p{margin:0;line-height:1.65;font-size:18px;font-weight:300}
+.gold{color:var(--oro)}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);font-weight:800}
+.pill{display:inline-block;background:var(--oro);color:var(--grafite);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:9px 16px;border-radius:999px}
+section{position:relative;padding:120px 8vw;overflow:visible}
+.h2{font-size:clamp(40px,5.2vw,84px);letter-spacing:-.005em;margin-top:18px}
+.rv{opacity:0;transform:translateY(60px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ===== HERO: titolo in alto, ruota 3D al centro con il logo dentro ===== */
+#intro{padding:0;height:240vh}
+.hero-stage{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:4vh;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('img/hero-palco.jpg') center/cover;opacity:.3}
+.hero-tint{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(42,42,40,.35) 0%,rgba(42,42,40,.95) 75%)}
+.hero-title{position:relative;z-index:6;text-align:center;font-size:clamp(34px,4.4vw,64px);animation:fadeup 1.2s cubic-bezier(.2,.7,.2,1) both}
+.hero-title span{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);font-weight:800;margin-bottom:14px}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.ring-wrap{position:relative;width:100%;height:min(64vh,600px);perspective:1400px;z-index:2}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.rc{position:absolute;width:220px;height:290px;margin:-145px 0 0 -110px;transform:rotateY(calc(var(--i)*60deg)) translateZ(400px);background:center/cover no-repeat;border:1px solid rgba(246,246,246,.2);box-shadow:0 26px 55px rgba(0,0,0,.55)}
+.ring-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(210px,42%);z-index:5;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+.scrollcue{position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.8;z-index:6}
+.scrollcue b{display:block;width:30px;height:2px;background:var(--oro)}
+
+/* ===== MARQUEE ===== */
+.ticker{background:var(--oro);color:var(--grafite);overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-2deg);margin:0 -4vw;position:relative;z-index:3}
+.ticker .t{display:inline-block;font-family:var(--serif);font-size:34px;animation:marq 24s linear infinite}
+.ticker .t span{margin:0 30px}
+.ticker.r{background:var(--caldo);transform:rotate(2deg);margin-top:-6px}
+.ticker.r .t{animation-direction:reverse;animation-duration:30s}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===== CARTE ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.scard{background:var(--caldo);color:var(--grafite);padding:34px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.scard:hover{transform:translateY(-8px)}
+.scard h3{font-size:30px}
+.scard p{font-size:16px;font-weight:400}
+
+/* ===== COSTRUZIONE ===== */
+.build{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;margin-top:56px;align-items:start}
+.build-stage{position:relative;background:var(--caldo);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.build-stage img{width:72%;position:relative;z-index:2}
+.bgrid{position:absolute;inset:0;opacity:0;transition:opacity .5s;background-image:linear-gradient(rgba(204,158,47,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(204,158,47,.4) 1px,transparent 1px);background-size:10% 10%}
+.bspace{position:absolute;inset:12%;border:1.5px dashed var(--oro);opacity:0;transition:opacity .5s;z-index:3}
+.bspace span{position:absolute;top:-22px;left:-2px;background:var(--oro);color:var(--grafite);font-weight:900;font-size:13px;padding:2px 8px}
+.build-stage.grid .bgrid{opacity:1}
+.build-stage.space .bspace{opacity:1}
+.toggles{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.toggles button,.btns button{font-family:var(--sans);cursor:pointer}
+.toggles button{background:var(--oro);color:var(--grafite);border:0;padding:11px 18px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px}
+.toggles button[aria-pressed="false"]{background:transparent;color:var(--caldo);border:1px solid rgba(246,246,246,.4)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btns button{background:transparent;color:var(--caldo);border:1px solid rgba(246,246,246,.3);padding:18px 16px;text-align:left;font-size:15px;font-weight:700;transition:background .3s,color .3s,border-color .3s}
+.btns button:hover,.btns button.on{background:var(--oro);border-color:var(--oro);color:var(--grafite)}
+.btns button small{display:block;font-size:12px;font-weight:400;opacity:.85;margin-top:4px}
+.binfo{margin-top:26px;min-height:140px}
+.binfo h3{font-size:clamp(30px,3vw,44px)}
+.binfo p{margin-top:12px;font-size:17px}
+
+/* ===== BLOCCHI LOGO ===== */
+.rhythm{display:grid;grid-template-columns:1fr;gap:20px;margin-top:60px}
+.shot{position:relative;margin:0;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.shot img{width:100%;height:100%;display:block;object-fit:cover}
+.shot.land img{aspect-ratio:16/9}
+.shot.port img{aspect-ratio:4/5}
+.shot.sq img{aspect-ratio:1/1}
+.shot .tag{position:absolute;left:18px;bottom:18px;background:var(--oro);color:var(--grafite);font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.vec{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.vec.light{background:var(--caldo)}
+.vec.dark{background:#1d1d1c;border:1px solid rgba(246,246,246,.12)}
+.vec img{width:58%;max-width:640px}
+.vec .tag{position:absolute;left:22px;bottom:20px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--oro)}
+.vec.light .tag{color:var(--grafite)}
+
+/* ===== PALETTE ===== */
+.tracks{margin-top:56px;border-top:1px solid rgba(246,246,246,.2)}
+.track{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:24px;padding:26px 8px;border-bottom:1px solid rgba(246,246,246,.2);cursor:pointer;transition:background .4s,padding .4s}
+.track:hover{background:rgba(204,158,47,.12);padding-left:24px}
+.track .n{font-family:var(--serif);font-size:28px;color:var(--oro)}
+.track h3{font-size:clamp(32px,3.6vw,52px)}
+.track .hex{font-weight:800;font-size:20px;letter-spacing:.04em}
+.swatch{width:64px;height:64px;border-radius:50%;border:2px solid rgba(246,246,246,.3)}
+.copied{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--caldo);color:var(--grafite);padding:10px 18px;font-size:14px;font-weight:800;opacity:0;transition:opacity .3s;pointer-events:none;z-index:50;border-radius:999px}
+.copied.show{opacity:1}
+
+/* ===== TIPOGRAFIA ===== */
+.type-big{font-family:var(--serif);font-size:clamp(150px,22vw,340px);line-height:.85}
+.type-sans{font-family:var(--sans);font-weight:900;font-size:clamp(120px,17vw,240px);line-height:.85}
+
+/* ===== APPLICAZIONI ===== */
+#gal{height:460vh;padding:0;overflow:visible}
+.stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:9vh;background:var(--grafite)}
+.stick .head{position:absolute;top:8vh;left:8vw;z-index:5}
+.stick .head .h2{margin-top:10px;font-size:clamp(34px,4.4vw,64px)}
+.rail{display:flex;gap:3vw;padding-left:8vw;align-items:flex-end;will-change:transform}
+.card-ph{flex:0 0 auto;height:54vh;width:calc(54vh*.8);position:relative;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.55);will-change:transform}
+.card-ph.land{width:calc(54vh*1.6)}
+.card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.card-ph .lab{position:absolute;left:0;bottom:0;background:var(--oro);color:var(--grafite);font-weight:900;font-size:13px;padding:10px 16px;text-transform:uppercase;letter-spacing:.08em}
+.count{position:absolute;right:8vw;top:8vh;font-family:var(--serif);font-size:26px;z-index:5}
+
+/* ===== VELO ===== */
+.velo-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;margin-top:56px}
+.velo-box{position:relative;overflow:hidden;min-height:480px;background:url('img/palco.jpg') center/cover}
+.velo-box::after{content:"";position:absolute;inset:0;background:url('img/gradiente.jpg') center/cover;mix-blend-mode:screen;opacity:.7}
+.velo-box2{position:relative;overflow:hidden;min-height:480px;background:url('img/case.jpg') center/cover}
+.velo-box2::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,42,40,0) 0%,rgba(42,42,40,.9) 100%)}
+.velo-box2 .gr{position:absolute;inset:0;background:url('img/gradiente.jpg') center/cover;mix-blend-mode:screen;opacity:.45;z-index:1}
+
+/* ===== COMPONENTI ===== */
+.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.kit .box{min-height:230px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(246,246,246,.18)}
+.kit .box p{font-size:15px}
+.eqbig{display:flex;align-items:flex-end;gap:6px;height:80px}
+.eqbig span{width:11px;background:var(--oro);border-radius:3px;animation:eqa 1.1s ease-in-out infinite alternate}
+.eqbig span:nth-child(2){animation-delay:.15s}.eqbig span:nth-child(3){animation-delay:.3s}.eqbig span:nth-child(4){animation-delay:.45s}.eqbig span:nth-child(5){animation-delay:.6s}.eqbig span:nth-child(6){animation-delay:.1s}
+@keyframes eqa{from{height:12%}to{height:100%}}
+.btn-demo{display:inline-block;align-self:flex-start;background:var(--oro);color:var(--grafite);font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:15px 24px;border-radius:999px;transition:transform .3s,background .3s}
+.btn-demo:hover{transform:scale(1.05);background:var(--caldo)}
+.btn-line{display:inline-block;align-self:flex-start;color:var(--caldo);border:1.5px solid var(--caldo);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:13px 22px;border-radius:999px}
+.chip{display:inline-block;margin:4px;padding:8px 14px;border-radius:999px;background:rgba(246,246,246,.12);font-size:13px;font-weight:700}
+
+/* ===== USI ===== */
+.uses{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.uses figure{margin:0}
+.uses .box{height:280px;display:flex;align-items:center;justify-content:center;background:var(--caldo);overflow:hidden}
+.uses .box.dark{background:var(--grafite);border:1px solid rgba(246,246,246,.18)}
+.uses .box img{max-width:70%;max-height:190px}
+.uses .bad1 img{transform:scaleX(1.5)}
+.uses .bad3 img{filter:hue-rotate(150deg) saturate(2)}
+.uses figcaption{font-size:15px;margin-top:14px;opacity:.9}
+
+/* ===== RINGRAZIAMENTO: nero su bianco caldo ===== */
+#crediti{background:var(--caldo);color:#000;padding:130px 8vw 100px;z-index:45;text-align:center}
+.thanks{max-width:860px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:30px}
+.thanks .eyebrow{color:#000}
+.thx-logo{width:min(220px,50%)}
+.kit-list{margin-top:28px;text-align:left;max-width:560px;margin-left:auto;margin-right:auto;font-size:14px}
+.kit-list h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin:18px 0 6px}
+.kit-list ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.kit-list a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.2)}
+.kit-list a:hover{color:#CC9E2F;border-color:#CC9E2F}
+.kit-btn{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:16px 30px;border-radius:999px;background:var(--oro);color:var(--grafite);font-weight:800;text-decoration:none;font-size:15px;letter-spacing:.02em;transition:transform .3s,background .3s}
+.kit-btn:hover{background:var(--grafite);color:var(--caldo);transform:translateY(-2px)}
+.kit-note{font-size:13px;opacity:.7;margin-top:10px}
+.thx-title{font-size:clamp(40px,4.6vw,64px);color:#000}
+.thx-text{font-size:20px;color:#000;max-width:680px;font-weight:400}
+.thx-by{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:20px;padding-top:34px;border-top:1px solid rgba(0,0,0,.2);width:100%}
+.thx-by span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#000}
+.thx-ss{width:min(190px,45%)}
+.thx-links{font-size:15px;color:#000;font-weight:400;line-height:1.8}
+.thx-links a{color:#000;text-decoration:none;border-bottom:2px solid var(--oro);font-weight:700}
+.thx-links a:hover{color:var(--oro)}
+
+/* ===== FOOTER STUDIO SEARCH ===== */
+.sfoot{background:#1b1b1a;color:var(--caldo);padding:100px 8vw 36px;z-index:45;position:relative}
+.sfoot .cta{display:block;font-family:var(--serif);font-size:clamp(38px,6vw,96px);line-height:1;color:var(--caldo);text-decoration:none;transition:color .4s}
+.sfoot .cta span{color:var(--oro)}
+.sfoot .cta:hover{color:var(--oro)}
+.sfoot .soc{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.sfoot .soc a{color:var(--caldo);text-decoration:none;border:1px solid rgba(246,246,246,.35);padding:12px 20px;border-radius:999px;font-size:14px;font-weight:700;transition:background .3s,color .3s}
+.sfoot .soc a:hover{background:var(--oro);color:var(--grafite);border-color:var(--oro)}
+.sfoot .grid3{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-top:64px;padding-top:40px;border-top:1px solid rgba(246,246,246,.15);align-items:start}
+.sfoot .flogo img{width:220px}
+.sfoot h4{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--oro);margin:0 0 12px;font-weight:800}
+.sfoot p,.sfoot a.lnk{font-size:17px;font-weight:400;color:var(--caldo);text-decoration:none;line-height:1.6}
+.sfoot a.lnk:hover{color:var(--oro)}
+.sfoot .legal{margin-top:60px;font-size:14px;opacity:.7;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ===== BARRA IN RIPRODUZIONE ===== */
+#np{position:fixed;left:0;right:0;bottom:0;height:64px;background:#161615;border-top:1px solid rgba(246,246,246,.12);display:flex;align-items:center;gap:14px;padding:0 18px;z-index:70}
+#np .meta{flex:1;min-width:0}
+#np .meta b{display:block;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#np .meta small{font-size:12px;opacity:.7}
+#np .bar{position:absolute;left:0;top:-3px;height:3px;background:var(--oro);width:0;transition:width .15s linear}
+#np button{font-family:var(--sans);cursor:pointer;border:0;flex:0 0 auto;font-weight:900}
+#np .play{width:42px;height:42px;border-radius:50%;background:var(--oro);color:var(--grafite);font-size:15px}
+#np .tor{background:transparent;color:var(--caldo);border:1px solid rgba(246,246,246,.35)!important;padding:9px 14px;border-radius:999px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+#np .tor[aria-pressed="false"]{opacity:.55}
+#np .lnk{color:var(--caldo);font-size:12px;opacity:.75;text-decoration:none;white-space:nowrap}
+#np .eqs{display:flex;gap:3px;align-items:flex-end;height:18px}
+#np .eqs span{width:3px;background:var(--oro);animation:eqa .9s ease-in-out infinite alternate;animation-play-state:paused}
+#np .eqs span:nth-child(2){animation-delay:.2s}#np .eqs span:nth-child(3){animation-delay:.4s}
+#np.live .eqs span{animation-play-state:running}
+
+/* ===== TORCIA ===== */
+#flash{position:fixed;inset:0;pointer-events:none;z-index:40;opacity:0;transition:opacity .6s;
+ background:
+  radial-gradient(circle 220px at var(--x,50%) var(--y,50%),rgba(204,158,47,.14),rgba(204,158,47,0) 70%),
+  radial-gradient(circle 300px at var(--x,50%) var(--y,50%),rgba(0,0,0,0) 45%,rgba(10,10,9,.6) 100%)}
+#flash.on{opacity:1}
+body.noflash #flash{display:none}
+@media (pointer:coarse){#flash{display:none}}
+
+@media (max-width:860px){
+ #intro{height:auto}
+ .hero-stage{height:auto;min-height:100vh;padding:110px 7vw 90px;justify-content:flex-start}
+ .ring-wrap{height:56vh;transform:scale(.6);transform-origin:center top}
+ .ring-logo{width:150px}
+ .hero-tint{background:linear-gradient(180deg,rgba(42,42,40,.95),rgba(42,42,40,.7))}
+ .velo-grid,.cards,.uses,.kit,.pair,.build,.sfoot .grid3{grid-template-columns:1fr}
+ .card-ph{height:46vh}
+ .count{display:none}
+ .track{grid-template-columns:44px 1fr auto}
+ .swatch{width:44px;height:44px}
+ #np .lnk{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div id="flash" aria-hidden="true"></div>
+
+<!-- HERO -->
+<section id="intro" data-chap="Introduzione">
+ <div class="hero-stage">
+  <div class="hero-bg"></div>
+  <div class="hero-tint"></div>
+  <h1 class="hero-title"><span>Elis Music</span>Manuale d'identità</h1>
+  <div class="ring-wrap">
+   <div class="ring" id="ring">
+    <div class="rc" style="--i:0;background-image:url('img/palco.jpg')"></div>
+    <div class="rc" style="--i:1;background-image:url('img/camiseta.jpg')"></div>
+    <div class="rc" style="--i:2;background-image:url('img/pulseira.jpg')"></div>
+    <div class="rc" style="--i:3;background-image:url('img/veiculo.jpg')"></div>
+    <div class="rc" style="--i:4;background-image:url('img/instrumento.jpg')"></div>
+    <div class="rc" style="--i:5;background-image:url('img/case.jpg')"></div>
+   </div>
+   <img class="ring-logo" src="img/logo-v-neg.png" alt="Logo Elis Music">
+  </div>
+  <div class="scrollcue"><b></b>Scorri</div>
+ </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="t"><span>Elis Music</span><span class="gold">✦</span><span>events and luxury wedding</span><span class="gold">✦</span><span>Elis Music</span><span class="gold">✦</span><span>events and luxury wedding</span><span class="gold">✦</span><span>Elis Music</span><span class="gold">✦</span><span>events and luxury wedding</span><span class="gold">✦</span><span>Elis Music</span><span class="gold">✦</span><span>events and luxury wedding</span><span class="gold">✦</span></div></div>
+
+<!-- CONCETTO -->
+<section class="rv" id="concetto" data-chap="01 · Concetto">
+ <p class="eyebrow">01 · Concetto</p>
+ <h2 class="h2">Il nome canta. <span class="gold">La nota risponde.</span></h2>
+ <div class="cards">
+  <div class="scard"><h3>Il nome</h3><p>Elis è un nome di persona: caldo e vicino. Music è il linguaggio che tutti capiscono.</p></div>
+  <div class="scard"><h3>La nota</h3><p>Non un'icona appesa al nome: una nota che canta, dentro al logo.</p></div>
+  <div class="scard"><h3>Le due voci</h3><p>Il serif racconta cura e autorevolezza. Lo script racconta gesto e spontaneità.</p></div>
+ </div>
+</section>
+
+<!-- COSTRUZIONE -->
+<section class="rv" id="costruzione" data-chap="02 · Costruzione del logo">
+ <p class="eyebrow">02 · Costruzione</p>
+ <h2 class="h2">Come nasce <span class="gold">il logo</span></h2>
+ <div class="build">
+  <div>
+   <div class="build-stage" id="bstage">
+    <div class="bgrid"></div>
+    <img src="img/logo-h-pos.png" alt="Logo orizzontale Elis Music">
+    <div class="bspace"><span>e</span></div>
+   </div>
+   <div class="toggles">
+    <button id="tGrid" aria-pressed="false">Griglia</button>
+    <button id="tSpace" aria-pressed="false">Area di rispetto</button>
+   </div>
+  </div>
+  <div>
+   <div class="btns" id="btns">
+    <button data-part="0" class="on">01 · Il serif<small>elis</small></button>
+    <button data-part="1">02 · Lo script<small>music</small></button>
+    <button data-part="2">03 · La nota<small>il punto di musica</small></button>
+    <button data-part="3">04 · Il payoff<small>events and luxury wedding</small></button>
+   </div>
+   <div class="binfo" aria-live="polite">
+    <h3 id="bt">Il serif</h3>
+    <p id="bp"></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ORIZZONTALE -->
+<section class="rv" id="logo" data-chap="03 · Logo orizzontale">
+ <p class="eyebrow">03 · Logo orizzontale</p>
+ <h2 class="h2">Orizzontale <span class="gold">in scena</span></h2>
+ <div class="rhythm">
+  <figure class="shot land"><img src="img/palco.jpg" alt="Palco con il logo"><span class="tag">Palco</span></figure>
+  <div class="vec light">
+   <img src="img/logo-h-pos.png" alt="Logo orizzontale positivo">
+   <span class="tag">Positivo · su bianco caldo</span>
+  </div>
+  <div class="pair">
+   <figure class="shot sq"><img src="img/camiseta.jpg" alt="Polo con il logo"><span class="tag">Polo</span></figure>
+   <figure class="shot sq"><img src="img/case.jpg" alt="Flight case con il logo"><span class="tag">Flight case</span></figure>
+  </div>
+ </div>
+</section>
+
+<!-- VERTICALE -->
+<section class="rv" id="logo-v" data-chap="04 · Logo verticale">
+ <p class="eyebrow">04 · Logo verticale</p>
+ <h2 class="h2">Verticale <span class="gold">al polso</span></h2>
+ <div class="rhythm">
+  <figure class="shot port" style="max-width:640px;width:100%;justify-self:center"><img src="img/veiculo.jpg" alt="Veicolo con il logo"><span class="tag">Veicolo</span></figure>
+  <div class="vec dark">
+   <img src="img/logo-v-neg.png" alt="Logo verticale negativo">
+   <span class="tag">Negativo · su grafite</span>
+  </div>
+  <div class="pair">
+   <figure class="shot port"><img src="img/instrumento.jpg" alt="Pianoforte con il logo"><span class="tag">Pianoforte</span></figure>
+   <figure class="shot port"><img src="img/pulseira.jpg" alt="Braccialetto con il logo"><span class="tag">Braccialetto</span></figure>
+  </div>
+ </div>
+</section>
+
+<!-- MONOGRAMMA -->
+<section class="rv" id="mono" data-chap="05 · Monogramma">
+ <p class="eyebrow">05 · Monogramma</p>
+ <h2 class="h2">Il monogramma <span class="gold">em</span></h2>
+ <div class="rhythm">
+  <div class="vec dark" style="min-height:460px">
+   <img src="img/mono-neg-nt.png" alt="Monogramma negativo" style="width:30%">
+   <span class="tag">Monogramma · negativo</span>
+  </div>
+ </div>
+</section>
+
+<div class="ticker r" aria-hidden="true"><div class="t"><span>Colori</span><span class="gold">✦</span><span>Tipografia</span><span class="gold">✦</span><span>Torcia</span><span class="gold">✦</span><span>Colori</span><span class="gold">✦</span><span>Tipografia</span><span class="gold">✦</span><span>Torcia</span><span class="gold">✦</span><span>Colori</span><span class="gold">✦</span><span>Tipografia</span><span class="gold">✦</span><span>Torcia</span><span class="gold">✦</span></div></div>
+
+<!-- PALETTE -->
+<section class="rv" id="palette" data-chap="06 · Palette">
+ <p class="eyebrow">06 · Palette</p>
+ <h2 class="h2">Tre colori, <span class="gold">un carattere</span></h2>
+ <p style="margin-top:16px;font-size:15px;opacity:.75">Clicca su una traccia per copiare il codice.</p>
+ <div class="tracks">
+  <div class="track" data-hex="#2A2A28"><span class="n">01</span><h3>Grafite</h3><div style="display:flex;align-items:center;gap:20px"><span class="hex">#2A2A28</span><span class="swatch" style="background:#2A2A28"></span></div></div>
+  <div class="track" data-hex="#F6F6F6"><span class="n">02</span><h3>Bianco caldo</h3><div style="display:flex;align-items:center;gap:20px"><span class="hex">#F6F6F6</span><span class="swatch" style="background:#F6F6F6"></span></div></div>
+  <div class="track" data-hex="#CC9E2F"><span class="n">03</span><h3>Oro</h3><div style="display:flex;align-items:center;gap:20px"><span class="hex">#CC9E2F</span><span class="swatch" style="background:#CC9E2F"></span></div></div>
+ </div>
+ <p style="margin-top:26px;font-size:15px;opacity:.75">RGB: Grafite 42·42·40 · Bianco caldo 246·246·246 · Oro 204·158·47</p>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section class="rv" id="tipografia" data-chap="07 · Tipografia">
+ <p class="eyebrow">07 · Tipografia</p>
+ <h2 class="h2">Serif per parlare, <span class="gold">sans per spiegare</span></h2>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;align-items:end">
+  <div><div class="type-big">Aa</div><p style="margin-top:18px">Yeseva One · titoli, vicini al logo.</p></div>
+  <div><div class="type-sans">Aa</div><p style="margin-top:18px">Poppins · testi e interfaccia.</p></div>
+ </div>
+</section>
+
+<!-- APPLICAZIONI -->
+<section id="gal" aria-label="Applicazioni del logo" data-chap="08 · Applicazioni">
+ <div class="stick" id="stick">
+  <div class="head"><p class="eyebrow">08 · Applicazioni</p><h2 class="h2">Il logo <span class="gold">in scena</span></h2></div>
+  <div class="count" id="count">01 / 06</div>
+  <div class="rail" id="rail">
+   <div class="card-ph land"><img src="img/palco.jpg" alt="Palco"><span class="lab">Palco</span></div>
+   <div class="card-ph port"><img src="img/veiculo.jpg" alt="Veicolo"><span class="lab">Veicolo</span></div>
+   <div class="card-ph port"><img src="img/instrumento.jpg" alt="Pianoforte"><span class="lab">Pianoforte</span></div>
+   <div class="card-ph land"><img src="img/case.jpg" alt="Flight case"><span class="lab">Flight case</span></div>
+   <div class="card-ph port"><img src="img/camiseta.jpg" alt="Polo"><span class="lab">Polo</span></div>
+   <div class="card-ph port"><img src="img/pulseira.jpg" alt="Braccialetto"><span class="lab">Braccialetto</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- VELO -->
+<section class="rv" id="velo" data-chap="09 · Velo">
+ <p class="eyebrow">09 · Gradiente come velo</p>
+ <h2 class="h2">Il gradiente <span class="gold">sopra le immagini</span></h2>
+ <div class="velo-grid">
+  <div class="velo-box"></div>
+  <div>
+   <p>Il gradiente si usa come velo sopra le fotografie: dà profondità e prepara lo sfondo per i testi.</p>
+   <p style="margin-top:20px">Il logo non va sovrapposto alle foto mockup, che già lo mostrano applicato.</p>
+   <span class="pill" style="margin-top:26px">Velo · 60%</span>
+  </div>
+ </div>
+ <div class="velo-grid" style="margin-top:36px">
+  <div>
+   <p>Lo stesso velo, con dissolvenza dal basso: per i titoli su immagini a tutta larghezza.</p>
+   <span class="pill" style="margin-top:26px">Dissolvenza · basso</span>
+  </div>
+  <div class="velo-box2"><div class="gr"></div></div>
+ </div>
+</section>
+
+<!-- COMPONENTI -->
+<section class="rv" id="kit" data-chap="10 · Componenti">
+ <p class="eyebrow">10 · Design system</p>
+ <h2 class="h2">Componenti <span class="gold">pop dance</span></h2>
+ <div class="kit">
+  <div class="box" style="background:var(--caldo);color:var(--grafite)">
+   <div class="eqbig" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+   <p>Equalizzatore: segnala la musica in riproduzione.</p>
+  </div>
+  <div class="box">
+   <div><span class="btn-demo">Ascolta la serata</span></div>
+   <p style="margin-top:18px">Pulsante primario: oro con testo grafite.</p>
+  </div>
+  <div class="box">
+   <div><span class="btn-line">Richiedi preventivo</span></div>
+   <p style="margin-top:18px">Pulsante secondario: contorno sottile per le azioni meno importanti.</p>
+  </div>
+  <div class="box">
+   <div><span class="chip">Matrimonio</span><span class="chip">Gala</span><span class="chip">Evento aziendale</span><span class="chip">Live</span></div>
+   <p style="margin-top:18px">Tag: le categorie degli eventi, in palette.</p>
+  </div>
+  <div class="box">
+   <div style="font-family:var(--serif);font-size:40px;line-height:1">Scorri, <span class="gold">cambia</span></div>
+   <p style="margin-top:18px">Titoli che reagiscono allo scroll: il ritmo del sito è il ritmo della musica.</p>
+  </div>
+  <div class="box">
+   <div><span class="pill">Torcia attiva</span></div>
+   <p style="margin-top:18px">Il cursore è una torcia che illumina la sezione. Si disattiva dalla barra in basso.</p>
+  </div>
+ </div>
+</section>
+
+<!-- USI -->
+<section class="rv" id="usi" data-chap="11 · Usi">
+ <p class="eyebrow">11 · Usi</p>
+ <h2 class="h2">Usi <span class="gold">corretti e vietati</span></h2>
+ <div class="uses">
+  <figure><div class="box dark"><img src="img/logo-v-neg.png" alt="Uso corretto"></div><figcaption>✓ Logo negativo su grafite, con area di rispetto.</figcaption></figure>
+  <figure class="bad1"><div class="box"><img src="img/logo-h-pos.png" alt="Logo deformato"></div><figcaption>✕ Non deformare il logo.</figcaption></figure>
+  <figure class="bad3"><div class="box"><img src="img/logo-h-pos.png" alt="Logo fuori palette"></div><figcaption>✕ Niente colori fuori palette.</figcaption></figure>
+ </div>
+</section>
+
+<!-- RINGRAZIAMENTO -->
+<section id="crediti" data-chap="Ringraziamenti">
+ <div class="thanks">
+  <p class="eyebrow">Ringraziamenti</p>
+  <img class="thx-logo" src="img/logo-v-pos.png" alt="Logo verticale Elis Music">
+  <h2 class="thx-title">Grazie</h2>
+  <p class="thx-text">Grazie allo Studio Search per la fiducia nel creare l'identità di Elis Music. Il logo, i colori e questo manuale nascono dal loro lavoro.</p>
+  <div class="thx-by">
+   <span>Brand realizzato da</span>
+   <img class="thx-ss" src="img/studio-search-dark.png" alt="Logo Studio Search">
+   <div class="thx-links">
+    <a href="https://studiosearch.com.br" target="_blank" rel="noopener">studiosearch.com.br</a> · <a href="mailto:contato@studiosearch.com.br">contato@studiosearch.com.br</a>
+   </div>
+  </div>
+  <a class="kit-btn" href="#kit">Scarica il kit del logo <span>↓</span></a>
+  <p class="kit-note">PNG senza sfondo, SVG vettoriali, font e palette colori.</p>
+<div id="kit" class="kit-list">
+ <a class="kit-btn kit-all" href="https://drive.google.com/drive/folders/1ZTNZoM_WzEez2RQeU2wRbUUtghX-_pbX?usp=sharing" target="_blank" rel="noopener">Scarica tutto (cartella completa) <span>↓</span></a>
+ <h4>Logo PNG (sfondo trasparente)</h4>
+ <ul>
+  <li><a href="https://drive.google.com/uc?export=download&id=1e3QtpU_VUqwcIcrGeVDkdUhxVcw81glh" target="_blank" rel="noopener">elis-music_orizzontale_positivo.png</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1cTFOEt_jd_7j1BEhfoQNEd1-kYFtDSyJ" target="_blank" rel="noopener">elis-music_orizzontale_negativo.png</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1J-zVshCwkmzoSW7pwLau6TuWW5OW1jyi" target="_blank" rel="noopener">elis-music_verticale_positivo.png</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1vYsDpXqh2k4wptPtnvHHiX_ldUGP4z1A" target="_blank" rel="noopener">elis-music_verticale_negativo.png</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1QQJ5BnSFDCQ3hRzFjXmpVBjF1Fl6fe4u" target="_blank" rel="noopener">elis-music_monogramma_positivo.png</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1_EH3egU7JPop0EaUcOkN0I3K_TEaFGsZ" target="_blank" rel="noopener">elis-music_monogramma_negativo.png</a></li>
+ </ul>
+ <h4>Logo JPEG</h4>
+ <ul>
+  <li><a href="https://drive.google.com/uc?export=download&id=1siW_Pd27smjzAKt-WAlejl7-wRCL11mx" target="_blank" rel="noopener">Elis Music-01.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1XUDYDQ3ZB0SCiOY73MdEgbGMvviSLd6l" target="_blank" rel="noopener">Elis Music-02.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1OKjGYWjG_DniVNPgO1h-Qv-0S0WGsnyH" target="_blank" rel="noopener">Elis Music-03.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1HpCiC4ZtwpQ5nc-qqnDxpS02oPXHznxZ" target="_blank" rel="noopener">Elis Music-04.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1-pXjX_2BT602XDRo5O741OPAOnjm1EIz" target="_blank" rel="noopener">Elis Music-05.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1hTobTqyQ1k81BVA6NUC60zwOIpvd0H1q" target="_blank" rel="noopener">Elis Music-06.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1k0F23Ay2ddSx4yzP5tAprDPlg4NPvVR2" target="_blank" rel="noopener">Elis Music txt-01.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1eWZimrxtdgsDld2Apezv7MypAkjL1pgr" target="_blank" rel="noopener">Elis Music txt-02.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1iai138e1Ow7eQHyReahpQ5rpxSoAMwJL" target="_blank" rel="noopener">Elis Music txt-03.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1JVTcx-q8AdMslG4JV2QLVYvQ3by7C2FB" target="_blank" rel="noopener">Elis Music txt-04.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1flcFfEe-fUBrUq-qjb_99-Up_9U-Tl1z" target="_blank" rel="noopener">Elis Music txt-05.jpg</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1zeolLtZ0XM8RGsIcX9Vjbs7pH5--YJ9n" target="_blank" rel="noopener">Elis Music txt-06.jpg</a></li>
+ </ul>
+ <h4>Font (WOFF2 e licenze)</h4>
+ <ul>
+  <li><a href="https://drive.google.com/uc?export=download&id=1l4JM-UeEE2oZdTxXxKzeOZV5yGaBTLab" target="_blank" rel="noopener">Poppins-300.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1pV7AnwzS158wy33SEyxKcYLee-IOYAAj" target="_blank" rel="noopener">Poppins-400.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=15O9ADYDekMsNFdAx_IDkzeOVQqo7Mnv0" target="_blank" rel="noopener">Poppins-600.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1cfB1fEld0A3LDUQ3h653cDKemXGcjJ9o" target="_blank" rel="noopener">Poppins-700.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1HJ9UOQ3DJS7Mxk7niFuw6QggqvkEkYny" target="_blank" rel="noopener">Poppins-800.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1CDHh6SvlfIO7b4QLieoLdPgELDDDN_KO" target="_blank" rel="noopener">Poppins-900.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1iyCRgY2Bmf2vBJJ_CE0gHVUNrf3UFue2" target="_blank" rel="noopener">YesevaOne-400.woff2</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1F6IEKYddxFax62JVq2a9Zs0h6MQ03w8m" target="_blank" rel="noopener">LICENSE-Poppins.txt</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1D6MTzDmRyE6iDHEIfwONTaaRE37l9htz" target="_blank" rel="noopener">LICENSE-YesevaOne.txt</a></li>
+ </ul>
+ <h4>Palette colori</h4>
+ <ul>
+  <li><a href="https://drive.google.com/uc?export=download&id=1WYdpyAWo79ElC-IqGB1cuyElNBBRsWC8" target="_blank" rel="noopener">paleta.txt</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1VW8gXN4kex03vkpBzXh74dMMPzpYZfdG" target="_blank" rel="noopener">paleta.css</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1hEeVWZ4k0FP7g42Hh-XLrTwImb8n5hAF" target="_blank" rel="noopener">paleta.json</a></li>
+ </ul>
+ <h4>File originali e note</h4>
+ <ul>
+  <li><a href="https://drive.google.com/uc?export=download&id=1MWtOrZmTdUAdRlQ8rnpAS7FARWzO0Xrd" target="_blank" rel="noopener">Elis Music.pdf</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1-aYooecZtCI7hvF7T0XTiHGxOsIL4KGT" target="_blank" rel="noopener">Elis Music.ai</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1mgXa5x_QY5FtlnLa8PIlLxt7VJSvmV6E" target="_blank" rel="noopener">LEGGIMI.txt</a></li>
+ </ul>
+</div>
+  <div class="thx-links">
+   Elis Music · <a href="https://elismusic.it" target="_blank" rel="noopener">elismusic.it</a> · <a href="https://instagram.com/elismusic" target="_blank" rel="noopener">@elismusic</a>
+  </div>
+ </div>
+</section>
+
+<!-- FOOTER: Studio Search -->
+<footer class="sfoot">
+ <div class="grid3">
+  <div class="flogo"><img src="img/studio-search-light.png" alt="Studio Search"></div>
+  <div>
+   <h4>Endereço</h4>
+   <p>Rua Joana Angélica, 249 – Sala 41</p>
+   <p style="margin-top:6px">São Caetano do Sul | SP</p>
+  </div>
+  <div>
+   <h4>Email</h4>
+   <a class="lnk" href="mailto:contato@studiosearch.com.br">contato@studiosearch.com.br</a>
+  </div>
+ </div>
+ <div class="legal"><span>Copyright © Studio Search</span><span>Made in SP 🚀</span></div>
+</footer>
+
+<!-- BARRA IN RIPRODUZIONE -->
+<div id="np" role="region" aria-label="Musica di sottofondo">
+ <div class="bar" id="npbar"></div>
+ <button class="play" id="play" aria-label="Riproduci o pausa">▶</button>
+ <div class="meta"><b id="npTitle">Elis Music · Introduzione</b><small>Groove pop generato · 118 BPM</small></div>
+ <div class="eqs" aria-hidden="true"><span></span><span></span><span></span></div>
+ <a class="lnk" href="https://open.spotify.com/track/1z6WtY7X4HQJvzxC4UgkSf" target="_blank" rel="noopener">Apri su Spotify</a>
+ <button class="tor" id="tor" aria-pressed="true">Torcia on</button>
+</div>
+<div class="copied" id="copied">Codice copiato</div>
+
+<script>
+(function(){
+ var clamp=function(v){return Math.max(0,Math.min(1,v));};
+
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.1});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+ var intro=document.getElementById('intro'), ring=document.getElementById('ring');
+ var gal=document.getElementById('gal'), rail=document.getElementById('rail'), count=document.getElementById('count');
+ var cards=[].slice.call(rail.querySelectorAll('.card-ph'));
+ var npT=document.getElementById('npTitle'), npB=document.getElementById('npbar');
+ var sections=[].slice.call(document.querySelectorAll('[data-chap]'));
+
+ function frame(){
+  var y=window.scrollY, H=document.documentElement.scrollHeight-window.innerHeight;
+  npB.style.width=(clamp(y/H)*100)+'%';
+
+  var hp=clamp(y/(intro.offsetHeight-window.innerHeight));
+  ring.style.transform='rotateX(-7deg) rotateY('+(hp*360)+'deg)';
+
+  var r=gal.getBoundingClientRect(), total=gal.offsetHeight-window.innerHeight;
+  var p=clamp(-r.top/total);
+  var max=rail.scrollWidth-window.innerWidth+window.innerWidth*0.08;
+  rail.style.transform='translate3d('+(-p*max)+'px,0,0)';
+  cards.forEach(function(c,i){
+   var d=Math.abs(p-i/(cards.length-1));
+   c.style.transform='scale('+(1-Math.min(.1,d*.16))+')';
+   c.style.filter='brightness('+(1-Math.min(.4,d*.5))+')';
+  });
+  count.textContent=String(Math.min(6,Math.floor(p*6)+1)).padStart(2,'0')+' / 06';
+
+  var cur='Introduzione';
+  for(var i=0;i<sections.length;i++){
+   var b=sections[i].getBoundingClientRect();
+   if(b.top<window.innerHeight*0.5){cur=sections[i].getAttribute('data-chap');}
+  }
+  npT.textContent='Elis Music · '+cur;
+  requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
+
+ var parts=[
+  {t:'Il serif',p:'Il nome "elis" usa un serif caldo e con carattere, lo stesso dei titoli del brand: autorevole ma vicino.'},
+  {t:'Lo script',p:'"music" è scritto in uno script più libero e spontaneo. Racconta gesto, festa e movimento.'},
+  {t:'La nota',p:'La nota dorata chiude il nome e lo fa cantare. È l\'unico elemento in oro del logo principale.'},
+  {t:'Il payoff',p:'"events and luxury wedding" in script sotto il nome definisce il campo d\'azione del brand.'}
+ ];
+ var btns=[].slice.call(document.querySelectorAll('#btns button'));
+ btns.forEach(function(b){
+  b.addEventListener('click',function(){
+   var k=+b.getAttribute('data-part');
+   btns.forEach(function(x){x.classList.toggle('on',x===b);});
+   document.getElementById('bt').textContent=parts[k].t;
+   document.getElementById('bp').textContent=parts[k].p;
+  });
+ });
+ document.getElementById('bp').textContent=parts[0].p;
+
+ var stage=document.getElementById('bstage');
+ function tog(id,cls){
+  var el=document.getElementById(id);
+  el.addEventListener('click',function(){
+   var on=el.getAttribute('aria-pressed')!=='true';
+   el.setAttribute('aria-pressed',on?'true':'false');
+   stage.classList.toggle(cls,on);
+  });
+ }
+ tog('tGrid','grid'); tog('tSpace','space');
+
+ var toast=document.getElementById('copied');
+ document.querySelectorAll('.track').forEach(function(t){
+  t.addEventListener('click',function(){
+   var hex=t.getAttribute('data-hex');
+   if(navigator.clipboard){navigator.clipboard.writeText(hex).catch(function(){});}
+   toast.textContent='Copiato '+hex; toast.classList.add('show');
+   setTimeout(function(){toast.classList.remove('show');},1400);
+  });
+ });
+
+ if(window.matchMedia('(pointer:fine)').matches){
+  var fl=document.getElementById('flash');
+  document.addEventListener('mousemove',function(e){
+   document.documentElement.style.setProperty('--x',e.clientX+'px');
+   document.documentElement.style.setProperty('--y',e.clientY+'px');
+   fl.classList.add('on');
+  });
+ }
+ var tor=document.getElementById('tor');
+ tor.addEventListener('click',function(){
+  var off=document.body.classList.toggle('noflash');
+  tor.setAttribute('aria-pressed',off?'false':'true');
+  tor.textContent=off?'Torcia off':'Torcia on';
+ });
+
+ var AC=window.AudioContext||window.webkitAudioContext;
+ var ac=null, timer=null, playing=false, nextT=0, step=0, STEP=60/118/4;
+ var ROOT=[110,87.31,130.81,98];
+ var CHORDS=[[220,261.63,329.63],[174.61,220,261.63],[261.63,329.63,392],[196,246.94,293.66]];
+ var playBtn=document.getElementById('play'), np=document.getElementById('np');
+
+ function noise(t,len,hp,g){
+  var n=Math.floor(ac.sampleRate*len),b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);
+  for(var i=0;i<n;i++){d[i]=(Math.random()*2-1)*(1-i/n);}
+  var s=ac.createBufferSource(); s.buffer=b;
+  var f=ac.createBiquadFilter(); f.type='highpass'; f.frequency.value=hp;
+  var gn=ac.createGain(); gn.gain.value=g;
+  s.connect(f); f.connect(gn); gn.connect(ac.destination); s.start(t);
+ }
+ function tone(t,freq,type,dur,g){
+  var o=ac.createOscillator(), gn=ac.createGain();
+  o.type=type; o.frequency.value=freq;
+  gn.gain.setValueAtTime(0.0001,t);
+  gn.gain.exponentialRampToValueAtTime(g,t+0.02);
+  gn.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(gn); gn.connect(ac.destination); o.start(t); o.stop(t+dur+0.05);
+ }
+ function kick(t){
+  var o=ac.createOscillator(), gn=ac.createGain();
+  o.frequency.setValueAtTime(160,t); o.frequency.exponentialRampToValueAtTime(42,t+0.12);
+  gn.gain.setValueAtTime(0.9,t); gn.gain.exponentialRampToValueAtTime(0.0001,t+0.28);
+  o.connect(gn); gn.connect(ac.destination); o.start(t); o.stop(t+0.3);
+ }
+ function playStep(s,t){
+  var bar=Math.floor(s/16)%4, w=s%16, d=STEP;
+  if(w%4===0) kick(t);
+  if(w===4||w===12) noise(t,0.18,1500,0.22);
+  noise(t,0.04,7000,w%2?0.10:0.05);
+  if(w===0||w===6||w===10||w===14) tone(t,ROOT[bar],'triangle',d*2.2,0.22);
+  if(w===0) CHORDS[bar].forEach(function(f){tone(t,f,'sine',d*15,0.05);});
+ }
+ function schedule(){
+  while(nextT<ac.currentTime+0.15){
+   playStep(step,nextT);
+   nextT+=STEP; step=(step+1)%64;
+  }
+ }
+ playBtn.addEventListener('click',function(){
+  if(!AC){return;}
+  if(!ac){ac=new AC();}
+  if(ac.state==='suspended'){ac.resume();}
+  if(playing){
+   clearInterval(timer); playing=false;
+   playBtn.textContent='▶'; np.classList.remove('live');
+  }else{
+   nextT=ac.currentTime+0.06; step=0;
+   timer=setInterval(schedule,25); playing=true;
+   playBtn.textContent='❚❚'; np.classList.add('live');
+  }
+ });
+})();
+</script>
+</body>
+</html>
